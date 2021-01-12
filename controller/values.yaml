@@ -1,0 +1,15 @@
+hcloud-cloud-controller-manager:
+  manager:
+    secret:
+      create: true
+      hcloudApiToken: "<NEEDS TO BE REPLACED!>"
+    privateNetwork:
+      enabled: true
+      clusterSubnet: "172.16.0.0/12"
+      id: "<NEEDS TO BE REPLACED!>"
+
+hcloud-csi-driver:
+  csiDriver:
+    secret:
+      create: false
+      name: "setup-hcloud-api-token"

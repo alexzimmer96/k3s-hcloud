@@ -1,0 +1,6 @@
+hcloud-cloud-controller-manager:
+  manager:
+    secret:
+      hcloudApiToken: "<Hetzner API-Token used by the Cloud-Controller>"
+    privateNetwork:
+      id: "<ID of the Network your Cluster has been deployed to>"

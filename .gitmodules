@@ -1,0 +1,6 @@
+[submodule "controller/charts/hcloud-csi-driver"]
+	path = controller/charts/hcloud-csi-driver
+	url = https://gitlab.com/MatthiasLohr/hcloud-csi-driver-helm-chart.git
+[submodule "controller/charts/hcloud-cloud-controller-manager"]
+	path = controller/charts/hcloud-cloud-controller-manager
+	url = https://gitlab.com/MatthiasLohr/hcloud-cloud-controller-manager-helm-chart.git
