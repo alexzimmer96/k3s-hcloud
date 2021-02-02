@@ -2,7 +2,13 @@ terraform {
   required_providers {
     hcloud = {
       source  = "hetznercloud/hcloud"
-      version = "1.23.0"
+      version = "1.24.0"
+    }
+    template = {
+      version = "~> 2.2.0"
+    }
+    local = {
+      version = "~> 2.0.0"
     }
   }
 }
@@ -104,6 +110,17 @@ resource "hcloud_server_network" "k3s_worker_nodes_subnets" {
   count      = var.worker_nodes
   server_id  = hcloud_server.k3s_worker_nodes[count.index].id
   subnet_id  = hcloud_network_subnet.k3s_default_subnet.id
+}
+
+#======================================================================================================
+# Creating the controller-values.yaml file from its template
+
+resource "local_file" "controller_values_output" {
+  filename = "${path.module}/controller-values.yaml"
+  content  = templatefile("${path.module}/controller-values.yaml.template", {
+    api_token          = var.hcloud_token
+    private_network_id = hcloud_network.k3s_internal_network.id
+  })
 }
 
 #======================================================================================================

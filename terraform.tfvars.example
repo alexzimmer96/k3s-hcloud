@@ -1,3 +1,3 @@
 cluster_secret      = "<Secret, random generated String that's shared between all your Nodes>"
-hcloud_token        = "<Your Hetzner Cloud API-TOken>"
+hcloud_token        = "<Your Hetzner Cloud API-Token>"
 hcloud_ssh_key_path = "<Path to your SSH-Key to access the servers (without .pub)>"

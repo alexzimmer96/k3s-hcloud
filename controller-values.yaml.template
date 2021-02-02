@@ -1,0 +1,6 @@
+hcloud-cloud-controller-manager:
+  manager:
+    secret:
+      hcloudApiToken: "${api_token}"
+    privateNetwork:
+      id: "${private_network_id}"
